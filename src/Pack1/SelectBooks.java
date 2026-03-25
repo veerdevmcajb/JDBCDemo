@@ -31,3 +31,7 @@ public class SelectBooks {
         con.close();
     }
 }
+
+
+// Note ;- with the above code Advantage is --. application will always give latest data to user.
+// If we have lack of records it will decrease Performance of the application . it has to compare every Row.  disadvantage

@@ -7,7 +7,7 @@ public class InsertBooks {
     private static final String url="jdbc:mysql://localhost:3306/advjdbc";
     private static final String username="root";
     private static final String pass = "root12";
-    private static final String InsertQuery ="Insert into books values (102,'Questions Are the Answer',550)";
+    private static final String InsertQuery ="Insert into books values (105,'Reach dad',650)";
 
 
     public static void main(String[] args)  throws Exception{
@@ -16,32 +16,22 @@ public class InsertBooks {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        // step 2 get database connection
-
-     Connection con = DriverManager.getConnection(url, username,pass);
-     System.out.println(con);
-
-     // step 3  create a statement
-        Statement stmt = con.createStatement();
-
-        // step 4 Execute query
-        int row_Effected = stmt.executeUpdate(InsertQuery);
-
-        // step 5 Process result
-        System.out.println("Record Inserted Count " + row_Effected);
-
-        // step 6 close the connection
-        con.close();
-        disply();
+        insert();
+        display();
         System.out.println();
         update();
     }
 
-    public static void insert(){
+    public static void insert() throws Exception{
 
+       Connection con = DriverManager.getConnection(url,username,pass);
+       Statement stmt = con.createStatement();
+       int rowAffected = stmt.executeUpdate(InsertQuery);
+        System.out.println("Record Inserted "+  rowAffected);
+        con.close();
     }
 
-    public static void disply() throws SQLException {
+    public static void display() throws SQLException {
 
         Connection con = DriverManager.getConnection(url,username,pass);
 
@@ -65,8 +55,9 @@ public class InsertBooks {
         Statement stmt = con.createStatement();
 
         int res = stmt.executeUpdate("delete from books where book_id = 102");
+        System.out.println("Row Deleted..."+ res);
 
-        disply();
+        display();
 
     }
 }
