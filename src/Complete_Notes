@@ -958,6 +958,23 @@ Formula :   New_Salary = existing_sal + (existing_Sal * hike_percentage) / 100;
 syntax to create Procedure
 ========================
 
+->  procedure means a database program which will have set of sql statement to perform one or more operation.
+->  from the java application we will call the procedure  then procedure will execute at the database will complete the operations .
+-> by writing procedure in database we will reduce no of calls between java & database.
+-> to call the procedures we will use callable statement.
+
+-> procedures are equals to java methods
+-> for procedure input and output not mandatary.
+when we want to execute a procedures then we will go to callable statement.
+
+
+## when to go for
+statement            --> static Queries (select * from Employee)
+PreparedStatement    --> same Query with different values the we use preparedStatement.
+                        -> PreparedStatement support Positional Parameters
+callableStatement    --> if we want to execute a Procedure.
+
+
 CREARE PROCEDURE <PROCEDURE-NAME>  ( params.... )
 
 BEGIN
@@ -1175,6 +1192,7 @@ JDBC Batch Operations
 
 
 Ex:     insert 100 records into table at a time
+
 
 
 public class BatchOpsEx {
@@ -1666,6 +1684,9 @@ public class BookStore {
 }
 
 =========================Read Image from Database ===============
+-> when we are reading Image from database we can't print Image in the console.
+-> we need to store the image into a file using FileOutputStream .
+
 
 package in.ashokit;
 
@@ -1698,6 +1719,9 @@ public class BookStore {
 }
 
 ======================RowSet Example =========================
+
+-> RowSet is a predefine interface available in java.sql package.
+-> it is sub interface if ResultSet . by using RowSet we can execute Sql Query.
 
 public class BookStore {
 

@@ -68,4 +68,16 @@ public class SearchEmployee {
 
 
 // The above requirement is dynamic search we need to prepare the query based on user given inputs.
-//
+
+/*          🎯 Key Understanding
+            AND conditions reduce (filter) the result set
+            More conditions = more specific results
+            WHERE 1=1 helps to easily append multiple AND conditions
+            PreparedStatement ensures:
+            Security ✅
+            Clean parameter handling ✅
+
+            SELECT * FROM EMPLOYEE WHERE 1=1
+            This ensures that additional conditions can be easily appended using AND without worrying about
+*
+* */

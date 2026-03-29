@@ -5,6 +5,8 @@ import com.sun.tools.javac.Main;
 import java.sql.*;
 import java.util.Scanner;
 
+// This logic decrease the performance of the application.
+
 public class EmpHike {
 
     private static final String url = "jdbc:mysql://localhost:3306/advjdbc";
@@ -32,6 +34,7 @@ public class EmpHike {
           pstmt.setDouble(1,newSal);
           pstmt.setInt(2,empId);
           pstmt.executeUpdate();
+
       }
         System.out.println("Update completed....");
         con.close();
